@@ -20,7 +20,7 @@ public class EchoEffect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player.isDashing == true)
+        if(player.canDash == false)
         {
             if(timeBtwSpawns <= 0)
             {
@@ -30,7 +30,7 @@ public class EchoEffect : MonoBehaviour
             }
             else
             {
-                timeBtwSpawns -= Time.deltaTime;
+                timeBtwSpawns = timeBtwSpawns - (Time.deltaTime * 5);
             }
         }
     }
