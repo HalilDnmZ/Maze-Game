@@ -4,55 +4,115 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    Rigidbody2D rb;
-    public float m_speed = 5f;
-    public bool isMoving = false;
+    public bool canDash = true;
+    public bool isDashing;
+    private float dashingPower = 24f;
+    private float dashingTime = 0.2f;
+    private float dashingCooldown = 0.6f;
 
-    // Start is called before the first frame update
+
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private TrailRenderer tr;
+
+
+
+
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         
     }
 
-    private void FixedUpdate()
-    {
-        
-        //Vector3 m_input = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
-        //rb.MovePosition(transform.position + m_input * Time.deltaTime * m_speed );
-    }
-    // Update is called once per frame
+    
     void Update()
     {
-        if (Input.GetKey(KeyCode.RightArrow) && !isMoving)
+        if(isDashing)
         {
-            isMoving = true;
-            StartCoroutine(MoveRight());
+            return;
+        }
+
+        if(Input.GetKeyDown(KeyCode.RightArrow) && canDash)
+        {
+            StartCoroutine(DashRight());
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && canDash)
+        {
+            StartCoroutine(DashLeft());
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow) && canDash)
+        {
+            StartCoroutine(DashUp());
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow) && canDash)
+        {
+            StartCoroutine(DashDown());
         }
     }
-    IEnumerator MoveRight()
+    private void FixedUpdate()
     {
-        while (true)
+        if (isDashing)
         {
-            transform.position += Vector3.right * m_speed * Time.deltaTime;
-            yield return null;
-
-            //if (Physics.Raycast(transform.position, Vector3.right, 0.5f))
-            //{
-            //    isMoving = false;
-            //    break;
-            //}
+            return;
         }
     }
-    void OnTriggerEnter2D(Collider2D otheer)
+
+    private IEnumerator DashRight()
     {
-        Debug.Log("Collide Happened");
-        //if (collision.collider.CompareTag("Graphics"))
-        //{
-        //isMoving = false;
-
-        //}
+        canDash = false;
+        isDashing = true;
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
+        tr.emitting = true;
+        yield return new WaitForSeconds(dashingTime);
+        tr.emitting = false;
+        rb.gravityScale = originalGravity;
+        isDashing = false;
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
     }
-
-
+    private IEnumerator DashLeft()
+    {
+        canDash = false;
+        isDashing = true;
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        rb.velocity = new Vector2(transform.localScale.x * dashingPower * -1, 0f);
+        tr.emitting = true;
+        yield return new WaitForSeconds(dashingTime);
+        tr.emitting = false;
+        rb.gravityScale = originalGravity;
+        isDashing = false;
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
+    }
+    private IEnumerator DashUp()
+    {
+        canDash = false;
+        isDashing = true;
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        rb.velocity = new Vector2(0f, transform.localScale.y * dashingPower);
+        tr.emitting = true;
+        yield return new WaitForSeconds(dashingTime);
+        tr.emitting = false;
+        rb.gravityScale = originalGravity;
+        isDashing = false;
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
+    }
+    private IEnumerator DashDown()
+    {
+        canDash = false;
+        isDashing = true;
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        rb.velocity = new Vector2(0f, transform.localScale.y * dashingPower * -1);
+        tr.emitting = true;
+        yield return new WaitForSeconds(dashingTime);
+        tr.emitting = false;
+        rb.gravityScale = originalGravity;
+        isDashing = false;
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true; ;
+    }
 }

@@ -9,7 +9,7 @@ public class EchoEffect : MonoBehaviour
     public float timeBtwSpawns;
     public float startTimeBtwSpawns;
 
-    public GameObject echo;
+    public GameObject Echo1;
     private CharacterMovement player;  
     // Start is called before the first frame update
     void Start()
@@ -24,8 +24,8 @@ public class EchoEffect : MonoBehaviour
         {
             if(timeBtwSpawns <= 0)
             {
-                GameObject instance = (GameObject)Instantiate(echo, transform.position, Quaternion.identity);
-                Destroy(instance, 10f);
+                GameObject instance = (GameObject)Instantiate(Echo1, transform.position, Quaternion.identity);
+                Destroy(instance, 5f);
                 timeBtwSpawns = startTimeBtwSpawns;
             }
             else

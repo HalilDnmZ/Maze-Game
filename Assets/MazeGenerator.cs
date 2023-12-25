@@ -15,12 +15,30 @@ public class MazeGenerator : MonoBehaviour
     [SerializeField]
     private int _mazeHeight;
 
+    [SerializeField]
+    private int _seed;
+
+    [SerializeField]
+    private bool _useSeed;
+
     private MazeCell[,] _mazeGrid;
 
     private Camera mainCamera;
 
     void Start()
     {
+        if(_useSeed)
+        { 
+            Random.InitState(_seed);
+        }
+        else
+        {
+            int randomSeed = Random.Range(1, 1000000);
+            Random.InitState(randomSeed);
+
+            Debug.Log(randomSeed);
+        }
+
         _mazeGrid = new MazeCell[_mazeWidth, _mazeHeight];
 
         for (int x = 0; x < _mazeWidth; x++)
