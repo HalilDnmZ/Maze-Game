@@ -565,7 +565,7 @@ MonoBehaviour:
   _mazeCellPrefab: {fileID: 660270843821436353, guid: 4190d9e909487f64c9c46ba3afcbf567, type: 3}
   _mazeWidth: 5
   _mazeHeight: 3
-  _seed: 449754
+  _seed: 327700
   _useSeed: 1
 --- !u!4 &2107150036
 Transform:

@@ -8,7 +8,7 @@ public class CharacterMovement : MonoBehaviour
     public bool isDashing;
     private float dashingPower = 24f;
     private float dashingTime = 0.2f;
-    private float dashingCooldown = 0.6f;
+    private float dashingCooldown = 0.5f;
 
 
     [SerializeField] private Rigidbody2D rb;
