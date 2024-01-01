@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Graphics
   - Camera
+  - Enemy
   layers:
   - Default
   - TransparentFX

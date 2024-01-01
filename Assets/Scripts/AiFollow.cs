@@ -41,11 +41,4 @@ public class AiFollow : MonoBehaviour
 
         }
     }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.name == "Character")
-        {
-            SceneManager.LoadSceneAsync(2);
-        }
-    }
 }
