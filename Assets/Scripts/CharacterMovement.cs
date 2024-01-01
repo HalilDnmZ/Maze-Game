@@ -14,9 +14,6 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private TrailRenderer tr;
 
-
-
-
     void Start()
     {
         
