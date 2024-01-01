@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class DeathAnimation : MonoBehaviour
 {
-
+    public string tagToDestroy = "Enemy";
     private Animator anim;
     // Start is called before the first frame update
     void Start()
@@ -29,6 +29,11 @@ public class DeathAnimation : MonoBehaviour
     IEnumerator son()
     {
         anim.Play("Character_Death");
+        GameObject[] objectsToDestroy = GameObject.FindGameObjectsWithTag(tagToDestroy);
+        foreach (GameObject objectToDestroy in objectsToDestroy)
+        {
+            Destroy(objectToDestroy);
+        }
         yield return new WaitForSeconds(1);
         anim.Play("Crossfade_End");
         yield return new WaitForSeconds(5);
