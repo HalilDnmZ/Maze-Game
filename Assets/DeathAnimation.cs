@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DeathAnimation : MonoBehaviour
 {
@@ -21,7 +22,15 @@ public class DeathAnimation : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            anim.Play("Character_Death");
+            StartCoroutine(son());
+
         }
+    }
+    IEnumerator son()
+    {
+        anim.Play("Character_Death");
+        yield return new WaitForSeconds(1);
+        anim.Play("Character_Death");
+        SceneManager.LoadScene(2);
     }
 }
