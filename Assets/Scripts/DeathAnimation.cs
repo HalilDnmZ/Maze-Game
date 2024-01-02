@@ -7,6 +7,7 @@ public class DeathAnimation : MonoBehaviour
 {
     public string tagToDestroy = "Enemy";
     private Animator anim;
+    public Animator anim1;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,8 +35,8 @@ public class DeathAnimation : MonoBehaviour
         {
             Destroy(objectToDestroy);
         }
-        yield return new WaitForSeconds(1);
-        anim.Play("Crossfade_End");
+        yield return new WaitForSeconds(0);
+        anim1.Play("Crossfade_End");
         yield return new WaitForSeconds(5);
         SceneManager.LoadScene(2);
     }
