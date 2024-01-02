@@ -12864,6 +12864,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a104f0fec8c6e0343bd492e187523c2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tagToDestroy: Enemy
+  anim1: {fileID: 1277254511}
 --- !u!1 &1939062347
 GameObject:
   m_ObjectHideFlags: 0
