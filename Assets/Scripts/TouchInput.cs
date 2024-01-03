@@ -29,7 +29,7 @@ public class TouchInput : MonoBehaviour
                 fingerDown = false;
                 Debug.Log("Swiped down");
             }
-            else if (Input.touches[0].position.x <= startPosition.x + PixelDistanceToDetect)
+            else if (Input.touches[0].position.x >= startPosition.x + PixelDistanceToDetect)
             {
                 fingerDown = false;
                 Debug.Log("Swiped Right");
