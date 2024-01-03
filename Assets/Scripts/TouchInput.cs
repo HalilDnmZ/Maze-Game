@@ -24,6 +24,16 @@ public class TouchInput : MonoBehaviour
                 fingerDown = false;
                 Debug.Log("Swiped up");
             }
+            if (Input.touches[0].position.y <= startPosition.y - PixelDistanceToDetect)
+            {
+                fingerDown = false;
+                Debug.Log("Swiped down");
+            }
+        }
+        
+        if(fingerDown && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Ended)
+        {
+            fingerDown = false;
         }
 
         //TESTING FOR PC
