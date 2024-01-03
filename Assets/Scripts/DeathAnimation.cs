@@ -38,6 +38,6 @@ public class DeathAnimation : MonoBehaviour
         yield return new WaitForSeconds(0);
         anim1.Play("Crossfade_End");
         yield return new WaitForSeconds(5);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 }
