@@ -24,11 +24,22 @@ public class TouchInput : MonoBehaviour
                 fingerDown = false;
                 Debug.Log("Swiped up");
             }
-            if (Input.touches[0].position.y <= startPosition.y - PixelDistanceToDetect)
+            else if (Input.touches[0].position.y <= startPosition.y - PixelDistanceToDetect)
             {
                 fingerDown = false;
                 Debug.Log("Swiped down");
             }
+            else if (Input.touches[0].position.x <= startPosition.x + PixelDistanceToDetect)
+            {
+                fingerDown = false;
+                Debug.Log("Swiped Right");
+            }
+            else if (Input.touches[0].position.x <= startPosition.x - PixelDistanceToDetect)
+            {
+                fingerDown = false;
+                Debug.Log("Swiped Left");
+            }
+
         }
         
         if(fingerDown && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Ended)
