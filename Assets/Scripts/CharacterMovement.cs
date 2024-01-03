@@ -52,7 +52,7 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
-    private IEnumerator DashRight()
+    public IEnumerator DashRight()
     {
         canDash = false;
         isDashing = true;
@@ -67,7 +67,7 @@ public class CharacterMovement : MonoBehaviour
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }
-    private IEnumerator DashLeft()
+    public IEnumerator DashLeft()
     {
         canDash = false;
         isDashing = true;
@@ -82,7 +82,7 @@ public class CharacterMovement : MonoBehaviour
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }
-    private IEnumerator DashUp()
+    public IEnumerator DashUp()
     {
         canDash = false;
         isDashing = true;
@@ -97,7 +97,7 @@ public class CharacterMovement : MonoBehaviour
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }
-    private IEnumerator DashDown()
+    public IEnumerator DashDown()
     {
         canDash = false;
         isDashing = true;
