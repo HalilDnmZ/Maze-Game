@@ -9,6 +9,12 @@ public class TouchInput : MonoBehaviour
     public int PixelDistanceToDetect = 20;
     private bool fingerDown;
 
+    private CharacterMovement CharacterMovement;
+    private void Start()
+    {
+        CharacterMovement = GetComponent<CharacterMovement>();
+    }
+
     private void Update()
     {
         if (fingerDown == false && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
@@ -23,6 +29,7 @@ public class TouchInput : MonoBehaviour
             {
                 fingerDown = false;
                 Debug.Log("Swiped up");
+                StartCoroutine(CharacterMovement.DashUp());
             }
             else if (Input.touches[0].position.y <= startPosition.y - PixelDistanceToDetect)
             {
@@ -55,7 +62,7 @@ public class TouchInput : MonoBehaviour
             fingerDown = true;
         }
 
-        if (fingerDown)
+        if(fingerDown)
         {
             if(Input.mousePosition.y >= startPosition.y + PixelDistanceToDetect)
             {
