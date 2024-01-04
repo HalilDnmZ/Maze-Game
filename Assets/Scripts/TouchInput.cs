@@ -20,25 +20,25 @@ public class TouchInput : MonoBehaviour
 
         if (fingerDown)
         {
-            if (Input.touches[0].position.y >= startPosition.y + PixelDistanceToDetect)
+            if (Input.touches[0].position.y >= startPosition.y + PixelDistanceToDetect && player.canDash)
             {
                 fingerDown = false;
                 Debug.Log("Swiped up");
                 StartCoroutine(player.DashUp());
             }
-            else if (Input.touches[0].position.y <= startPosition.y - PixelDistanceToDetect)
+            else if (Input.touches[0].position.y <= startPosition.y - PixelDistanceToDetect && player.canDash)
             {
                 fingerDown = false;
                 Debug.Log("Swiped down");
                 StartCoroutine(player.DashDown());
             }
-            else if (Input.touches[0].position.x >= startPosition.x + PixelDistanceToDetect)
+            else if (Input.touches[0].position.x >= startPosition.x + PixelDistanceToDetect && player.canDash)
             {
                 fingerDown = false;
                 Debug.Log("Swiped Right");
                 StartCoroutine(player.DashRight());
             }
-            else if (Input.touches[0].position.x <= startPosition.x - PixelDistanceToDetect)
+            else if (Input.touches[0].position.x <= startPosition.x - PixelDistanceToDetect && player.canDash)
             {
                 fingerDown = false;
                 Debug.Log("Swiped Left");
