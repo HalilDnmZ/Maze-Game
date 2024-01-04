@@ -8,6 +8,17 @@ public class DeathAnimation : MonoBehaviour
     public string tagToDestroy = "Enemy";
     private Animator anim;
     public Animator anim1;
+
+    public int lastLevelIndex;
+
+    private void Awake()
+    {
+        lastLevelIndex = SceneManager.GetActiveScene().buildIndex;
+        PlayerPrefs.SetInt("lastValue", lastLevelIndex);
+        Debug.Log(lastLevelIndex);
+    }
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,4 +51,5 @@ public class DeathAnimation : MonoBehaviour
         yield return new WaitForSeconds(5);
         SceneManager.LoadScene(1);
     }
+    
 }
