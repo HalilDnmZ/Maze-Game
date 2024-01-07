@@ -12950,6 +12950,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tagToDestroy: Enemy
   anim1: {fileID: 1277254511}
+  lastLevelIndex: 0
 --- !u!114 &1930830368 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5034047624372158334, guid: f693e84d779b2c4479a5d96b916b2148, type: 3}
@@ -15489,6 +15490,10 @@ PrefabInstance:
     - target: {fileID: 7161361539662729739, guid: 053e7e8ef5744df48a8989ce40fe6bd1, type: 3}
       propertyPath: m_VertexColorAlwaysGammaSpace
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7161361539662729739, guid: 053e7e8ef5744df48a8989ce40fe6bd1, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7892358094137192701, guid: 053e7e8ef5744df48a8989ce40fe6bd1, type: 3}
       propertyPath: transition

@@ -18,7 +18,7 @@ public class GameOverMenu : MonoBehaviour
     }
     public void QuitGame()
     {
-        Application.Quit();
+        SceneManager.LoadSceneAsync(2);
     }
 
     void Start()
