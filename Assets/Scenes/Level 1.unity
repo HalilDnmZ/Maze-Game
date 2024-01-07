@@ -13153,7 +13153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagToDestroy: Enemy
-  anim1: {fileID: 1277254511}
+  anim1: {fileID: 372904619673407539}
   lastLevelIndex: 0
 --- !u!114 &1930830368 stripped
 MonoBehaviour:
@@ -15399,6 +15399,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1930830363}
   m_SourcePrefab: {fileID: 100100000, guid: f693e84d779b2c4479a5d96b916b2148, type: 3}
+--- !u!95 &372904619673407539 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9149321302420351689, guid: f693e84d779b2c4479a5d96b916b2148, type: 3}
+  m_PrefabInstance: {fileID: 372904619673407538}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2115712156211841491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15705,7 +15710,7 @@ PrefabInstance:
       objectReference: {fileID: 1277254511}
     - target: {fileID: 7892358094137192701, guid: 053e7e8ef5744df48a8989ce40fe6bd1, type: 3}
       propertyPath: transitionTime
-      value: 3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8703939755405972198, guid: 053e7e8ef5744df48a8989ce40fe6bd1, type: 3}
       propertyPath: m_Interactable
