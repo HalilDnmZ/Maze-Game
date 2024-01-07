@@ -7,7 +7,7 @@ public class Level_Manager : MonoBehaviour
 {
     public static Level_Manager instance;
     public Animator transition;
-    public float transitionTime = 0f;
+    public float transitionTime;
     private void Awake()
     {
         instance = this;

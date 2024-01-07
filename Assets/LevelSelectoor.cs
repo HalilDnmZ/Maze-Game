@@ -10,7 +10,8 @@ public class LevelSelectoor : MonoBehaviour
     public void levelLoad()
     {
         string objectName = gameObject.name;
-        SceneManager.LoadSceneAsync(objectName + 2);
+        int objectName2 = int.Parse(objectName);
+        SceneManager.LoadSceneAsync(objectName2 + 2);
     }
 
     void Start()
