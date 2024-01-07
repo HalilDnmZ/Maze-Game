@@ -9,7 +9,8 @@ public class LevelSelectoor : MonoBehaviour
 
     public void levelLoad()
     {
-        SceneManager.LoadSceneAsync(3);
+        string objectName = gameObject.name;
+        SceneManager.LoadSceneAsync(objectName + 2);
     }
 
     void Start()
