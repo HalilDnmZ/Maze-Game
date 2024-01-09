@@ -307,6 +307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tagToDestroy: Enemy
   anim1: {fileID: 0}
+  lastLevelIndex: 0
 --- !u!1 &2107150034
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,9 +338,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mazeCellPrefab: {fileID: 660270843821436353, guid: 4190d9e909487f64c9c46ba3afcbf567, type: 3}
-  _mazeWidth: 5
-  _mazeHeight: 3
-  _seed: 865336
+  _mazeWidth: 7
+  _mazeHeight: 4
+  _seed: 591433
   _useSeed: 1
 --- !u!4 &2107150036
 Transform:
